@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Penting</title>
+    <!-- Google Fonts untuk font yang lebih dramatis, contoh: Oswald, Roboto Slab, dll. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Import Google Fonts */
+        body {
+            font-family: 'Roboto Slab', serif; /* Font utama untuk body */
+            margin: 0;
+            padding: 0;
+            background-color: #0d0d0d; /* Latar belakang gelap */
+            color: #f0f0f0; /* Warna teks terang */
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* Ganti dengan URL gambar Sharingan favorit Anda untuk latar belakang. */
+            /* Contoh: url('URL_GAMBAR_SHARINGAN_ANDA.png') */
+            background-image: url('https://placehold.co/1920x1080/000000/FF0000?text=Sharingan+Background+Keren'); /* Placeholder gambar Sharingan */
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+            animation: backgroundPulse 15s infinite alternate ease-in-out; /* Animasi latar belakang */
+        }
+
+        /* Animasi untuk latar belakang */
+        @keyframes backgroundPulse {
+            0% { background-size: 100%; filter: brightness(1); }
+            50% { background-size: 105%; filter: brightness(1.1); }
+            100% { background-size: 100%; filter: brightness(1); }
+        }
+
+        /* Overlay untuk membuat teks lebih mudah dibaca di atas gambar latar belakang */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75); /* Overlay lebih gelap */
+            z-index: 1;
+            backdrop-filter: blur(3px); /* Efek blur pada latar belakang */
+        }
+
+        .container {
+            background-color: rgba(17, 17, 17, 0.95); /* Latar belakang semi-transparan untuk konten, lebih solid */
+            padding: 40px;
+            margin: 30px auto;
+            border-radius: 20px; /* Sudut lebih membulat */
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.6), 0 0 100px rgba(138, 43, 226, 0.5); /* Cahaya lebih intens */
+            max-width: 950px; /* Sedikit lebih lebar */
+            width: 90%;
+            position: relative;
+            z-index: 2;
+            border: 2px solid rgba(0, 255, 255, 0.3); /* Border lebih tebal */
+            animation: fadeInScale 1s ease-out forwards; /* Animasi saat dimuat */
+        }
+
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px; /* Jarak lebih besar */
+        }
+
+        .title {
+            font-family: 'Oswald', sans-serif; /* Font dramatis untuk judul */
+            font-size: 3.8em; /* Ukuran lebih besar */
+            color: #00ffff; /* Warna cyan terang */
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.9), 0 0 40px rgba(138, 43, 226, 0.7); /* Shadow lebih intens */
+            letter-spacing: 3px; /* Jarak huruf lebih lebar */
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .title .icon-eye {
+            color: #ff0000; /* Warna merah Sharingan yang lebih pekat */
+            font-size: 1.2em; /* Ukuran ikon lebih besar */
+            margin: 0 15px;
+            animation: pulse 1.5s infinite alternate, rotateEye 5s linear infinite; /* Animasi berdenyut dan berputar */
+            display: inline-block; /* Agar bisa dirotasi */
+        }
+
+        /* Animasi untuk ikon mata */
+        @keyframes pulse {
+            0% { transform: scale(1); text-shadow: 0 0 5px #ff0000; }
+            100% { transform: scale(1.1); text-shadow: 0 0 15px #ff0000, 0 0 30px rgba(255,0,0,0.5); }
+        }
+        @keyframes rotateEye {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Garis bawah efek chakra untuk judul */
+        .title::after {
+            content: '';
+            display: block;
+            width: 120px; /* Lebih panjang */
+            height: 7px; /* Lebih tebal */
+            background: linear-gradient(to right, #00ffff, #8a2be2); /* Gradient biru-ungu yang kuat */
+            margin: 15px auto 0;
+            border-radius: 7px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+        }
+
+        .greeting, .intro, .closing {
+            font-size: 1.2em; /* Ukuran teks sedikit lebih besar */
+            margin-bottom: 25px;
+            text-align: justify;
+            color: #e0e0e0;
+        }
+
+        .section {
+            margin-bottom: 45px; /* Jarak antar section lebih besar */
+            padding: 30px;
+            background-color: rgba(25, 25, 25, 0.8); /* Latar belakang section lebih solid */
+            border-left: 7px solid #ff0000; /* Garis merah Sharingan lebih tebal */
+            border-radius: 12px; /* Sudut lebih membulat */
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3); /* Shadow merah samar */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk hover */
+        }
+
+        .section:hover {
+            transform: translateY(-5px); /* Sedikit naik saat hover */
+            box-shadow: 0 5px 30px rgba(255, 0, 0, 0.5), 0 0 40px rgba(0, 255, 255, 0.3); /* Shadow lebih kuat saat hover */
+        }
+
+        /* Efek glow internal pada section */
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -10px; /* Efek glow lebih besar */
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: radial-gradient(circle at center, rgba(0, 255, 255, 0.2), rgba(138, 43, 226, 0.2), transparent 70%); /* Radial gradient */
+            z-index: -1;
+            filter: blur(15px); /* Blur lebih kuat */
+            opacity: 0.7;
+            animation: sectionGlow 4s infinite alternate; /* Animasi glow */
+        }
+
+        @keyframes sectionGlow {
+            0% { opacity: 0.7; transform: scale(1); }
+            100% { opacity: 0.9; transform: scale(1.02); }
+        }
+
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.2em; /* Ukuran lebih besar */
+            color: #ffa500; /* Warna oranye terang */
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-shadow: 0 0 12px rgba(255, 165, 0, 0.7); /* Shadow lebih kuat */
+            border-bottom: 2px dashed rgba(255, 255, 255, 0.3); /* Border lebih tebal */
+            padding-bottom: 15px;
+        }
+
+        .section p {
+            margin-bottom: 18px;
+            text-align: justify;
+            color: #d0d0d0;
+        }
+
+        .section p strong {
+            color: #00ffff; /* Highlight teks penting */
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 2px solid rgba(255, 255, 255, 0.15); /* Border lebih tebal */
+        }
+
+        .footer h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8em; /* Ukuran lebih besar */
+            color: #00ffff;
+            text-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+                margin: 20px auto;
+            }
+
+            .title {
+                font-size: 2.8em;
+            }
+
+            .section-title {
+                font-size: 1.8em;
+            }
+
+            .greeting, .intro, .closing, .section p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            .title {
+                font-size: 2em;
+                line-height: 1.3;
+            }
+
+            .title .icon-eye {
+                font-size: 1em;
+                margin: 0 5px;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="icon-eye">👁️</span> PENGUMUMAN PENTING UNTUK PARA ELITE <span class="icon-eye">👁️</span>
+            </h1>
+        </header>
+
+        <main class="content">
+            <p class="greeting">
+                **Kepada seluruh member SharinganID,**
+            </p>
+            <p class="intro">
+                Dengan berat hati dan mata batin yang tertuju ke masa depan, kami menyampaikan sebuah informasi krusial yang perlu Anda ketahui.
+            </p>
+
+            <section class="section">
+                <h2 class="section-title">⏳ Jeda Sementara Layanan Claude AI: Sebuah Pengorbanan untuk Kekuatan yang Lebih Besar ⏳</h2>
+                <p>
+                    Kami ingin menginformasikan bahwa layanan Claude AI akan kembali hadir **sesegera mungkin**. Ini bukanlah akhir, melainkan sebuah jeda strategis.
+                </p>
+                <p>
+                    Kami telah mengerahkan segala upaya, bak sebuah Mangekyo Sharingan yang tak kenal lelah, untuk mengakuisisi dan mempertahankan layanan Claude ini. Namun, dikarenakan sulitnya mempertahankan akun Claude yang secara terus menerus dibatasi oleh pihak Anthropic, admin terus mengupayakan agar layanan Claude dapat segera dilanjutkan kembali.
+                </p>
+                <p>
+                    Anggaplah ini sebagai fase latihan intensif, di mana kami menarik diri sejenak untuk mengumpulkan chakra dan merancang teknik yang lebih unggul.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">💥 Evolusi Selanjutnya: Membangkitkan Kekuatan Baru 💥</h2>
+                <p>
+                    Sebagai langkah tindak lanjut, saat ini **solusi lain kami tetap mencoba** yang akan jauh lebih stabil, terintegrasi, dan mampu memberikan pengalaman yang tak tertandingi di masa mendatang.
+                </p>
+                <p>
+                    Kami bertekad untuk menciptakan sebuah jutsu baru yang akan melampaui ekspektasi Anda, membawa ke level yang lebih tinggi lagi! Persiapkan diri Anda untuk menghadapi era baru dengan inovasi yang akan membuat Sharingan Anda terpana!
+                </p>
+            </section>
+
+            <p class="closing">
+                **Terima kasih atas pengertian, kesabaran, dan kepercayaan Sharinganers yang tak tergoyahkan.**
+            </p>
+        </main>
+
+        <footer class="footer">
+            <h3>Selalu Berusaha untuk Kekuatan dan Keunggulan yang Abadi.</h3>
+        </footer>
+    </div>
+</body>
+</html>
